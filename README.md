@@ -43,7 +43,15 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 分類實作
 --
 ### 新聞資料 http://mlg.ucd.ie/datasets/bbc.html
-資料為BBC的新聞資料，總共有2,225篇。各類別數量，business:510篇、entertainment:386篇、politics:417篇、sport:511篇、tech:401篇。
+資料為BBC的新聞資料，總共有2,225篇。各類別數量:
+| 類別 | 數量 |
+| ---- | ---- |
+| business | 510 |
+| entertainment | 386 |
+| politics | 417 |
+| sport | 511 |
+| tech | 401 |
+
 
 ### 分類想法
 實作方法有點類似KNN的做法，我們會在每個類別都挑出幾個具有代表性的Entity，稱為類別Entities。分類方法就是將文本的Entity提取出來後，跟每個類別Entities計算LDSD，加總平均後看文本跟哪個類別的LDSD距離最小，即為該類別。
@@ -52,5 +60,39 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/ldsd_classification.png" width="600"></div>
 1. 單一text entity與每個business entity計算完LDSD後做加總平均表示單一text entity與business類別的語意距離。
+
 2. 所有text entity與business entities計算完後做加總平均，即代表這篇文章與這個類別的語意距離。
+
 3. 該文章與所有類別都計算完後，就可以選擇距離最小者作為分類類別。
+
+### Property挑選
+在不同的分類應用我們可以挑選不同的Property，而在這邊我們挑選常出現的兩個property使用，分別為dct:subject與gold:hypernym。
+
+程式檔案介紹
+--
+#### get_news_entities.ipynb
+我們透過https://github.com/dbpedia-spotlight/dbpedia-spotlight可以自行架設DBpedia Spotlight服務。將所有文本放入服務後取得Entities。
+#### get_news_entities_problem.ipynb
+DBpedia Spotlight服務問題，輸入的文本長度不能太長，所以切割區塊放入。
+#### split_news_class_test.ipynb
+將所有文本依照80%、20%切割。
+#### get_all_class_test_entities.ipynb
+取得所有entity、各類別entities與將做為test data的文本放到同一個資料夾。
+#### get_all_entities_property_value.ipynb
+找到所有Entity在所選擇的兩個property底下的value，將所有資料都存下來，之後計算時只要查表即可。要注意DBpedia Rest API有流量的限制，時間內不可以存去太多次。
+#### all_value_in_one.ipynb
+將所有的Entity、Property與Value存放到同一個檔案，做為查找檔案。
+#### folder_statistic.ipynb
+各個檔案的統計資料。
+#### ldsd_algorithm.ipynb
+計算所有語意距離。
+#### score_count/ answer_file_split.ipynb
+將計算完分數的檔案切割，以便計算分數。
+#### score_count/ score_count.ipynb
+計算每一個類別的分類分數。
+
+成效
+--
+| 類別 | Precision | Recall | F-measure |
+| --- | :---: | :---: | :---" |
+| business | 0.6772 | 0.8431 | 0.7511 |
