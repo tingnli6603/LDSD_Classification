@@ -18,5 +18,8 @@ DBpedia Rest API則是將找到的Entity輸入後，會得到Property與Value。
 
 LDSD
 --
-LDSD指的是兩個Entity之間的距離，公式如下。ra與rb就是前述所說的Entity，也就是資料點；l代表Property，也就是兩點之間的關係是什麼，i則表示有多個Property，在兩個Entity之間他們可能由不同的關係所連接起來。
-<div align=center><img scr="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/ldsd_algorithm.png"></div>
+LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半部分與後半部分，前半部為直接距離，後半部則為間接距離。
+> ra與rb就是前述所說的Entity，也就是資料點；l代表Property，也就是兩點之間的關係是什麼，i則表示有多個Property，在兩個Entity之間他們可能由不同的關係所連接起來。
+
+<div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/ldsd_algorithm.png"></div>
+(來源: Measuring Semantic Distance on Linking Data and Using it for Resources Recommendations)
