@@ -26,4 +26,7 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 
 ### 直接距離
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/direct_distance_algorithm.png" width="600"></div>
-<div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/direct_distance_sample.png" width="400"></div>
+<div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/direct_distance_sample.png" width="350"></div>
+前後兩者的差異又在於方向性，方向是從ra到rb或是從rb到ra。
+
+假設我們只要看其中一個property l1兩者之間的關係，從ra到rb的分母指的是ra在l1的關係下可以找到幾個value；分子則是在這些value下，是否有一個是rb，如果有為1，沒有則為0(表示兩者之間在此property下是沒有關係的)。而從rb到ra也是如此，只是反過來搜尋。那如果有多個i，也就是把所有Property加總起來而已。
