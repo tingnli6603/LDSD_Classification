@@ -23,3 +23,7 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/ldsd_algorithm.png"></div>
 (來源: Measuring Semantic Distance on Linking Data and Using it for Resources Recommendations)
+
+### 直接距離
+<div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/direct_distance_algorithm.png" width="600"></div>
+<div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/direct_distance_sample.png" width="400"></div>
