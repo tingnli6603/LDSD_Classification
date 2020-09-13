@@ -45,12 +45,12 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 ### 新聞資料 http://mlg.ucd.ie/datasets/bbc.html
 資料為BBC的新聞資料，總共有2,225篇。各類別數量，business:510篇、entertainment:386篇、politics:417篇、sport:511篇、tech:401篇。
 
-###分類想法
+### 分類想法
 實作方法有點類似KNN的做法，我們會在每個類別都挑出幾個具有代表性的Entity，稱為類別Entities。分類方法就是將文本的Entity提取出來後，跟每個類別Entities計算LDSD，加總平均後看文本跟哪個類別的LDSD距離最小，即為該類別。
 
 我們利用簡單的方法挑選類別Entities，是將每一個類別都隨機挑出80%文章作為代表文章，將80%文本內的所有Entity作為類別Entities，剩下的20%則為測試資料。
 
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/ldsd_classification.png" width="600"></div>
-1.  單一text entity與每個business entity計算完LDSD後做加總平均表示單一text entity與business類別的語意距離。
-2.	所有text entity與business entities計算完後做加總平均，即代表這篇文章與這個類別的語意距離。
-3.	該文章與所有類別都計算完後，就可以選擇距離最小者作為分類類別。
+1. 單一text entity與每個business entity計算完LDSD後做加總平均表示單一text entity與business類別的語意距離。
+2. 所有text entity與business entities計算完後做加總平均，即代表這篇文章與這個類別的語意距離。
+3. 該文章與所有類別都計算完後，就可以選擇距離最小者作為分類類別。
