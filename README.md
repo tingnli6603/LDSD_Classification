@@ -34,7 +34,7 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 > 分母如此設定的意義在於在不同關係(li)下，所產生的value數量可能不一樣，那兩者之間的連結強度也不同。假設ra跟rb在l1與l2都有連結，ra在l1的value有100個，而在l2的value只有5個，那兩者在l2的連結強度會大於l1。其實概念就是每個人的朋友可能有幾百個人，但能稱為好朋友的大概就那5個，因此如果兩個人在好朋友的關係下有連結，那強度會比朋友關係還來的強，距離也會較短。
 
 ### 間接距離
-<div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/indirect_distance_algorithm.png" width="350"></div>
+<div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/indirect_distance_algorithm.png" width="600"></div>
 (間接距離我們視為兩者是沒有差異的，因此計算完一個後乘2)
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/indirect_distance_sample.png" width="350"></div>
 
