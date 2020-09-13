@@ -9,7 +9,14 @@ LDSD實作新聞分類
 
 ### Dbpedia(https://wiki.dbpedia.org/)
 Dbpedia則是從維基百科的資料萃取結構化的資料，將大量的資料依照關係串連起來。主要使用Dbpedia中的兩個API，分別為Dbpedia Spotlight與DBpedia Rest API。
+
 #### Dbpedia Spotlight (https://www.dbpedia-spotlight.org/)
 DBpedia Spotlight是找出文本中哪些字詞是有在Dbpedia資料中的，並且從中找出來，這些找出來的字詞稱為 __Entity__ ，也就是上圖的「李安」、「少年PI」與「雙子殺手」。
+
 #### DBpedia Rest API (https://wiki.dbpedia.org/rest-api)
-DBpedia Rest API則是將找到的Entity輸入後，會得到Property與Value， __Property就是上面的關係__ ，也就是「isDirectorof」； __Value則是根據此Property所找到的Entity__ 。以上圖來說，將「李安」這個Entity輸入到DBpedia Rest API後，會找到有一個叫「isDirectorof」的Property，他所對應的Value就有「少年PI」與「雙子殺手」這兩個Entity。
+DBpedia Rest API則是將找到的Entity輸入後，會得到Property與Value。 __Property就是上面的關係__ ，也就是「isDirectorof」； __Value則是根據此Property所找到的Entity__ 。以上圖來說，將「李安」這個Entity輸入到DBpedia Rest API後，會找到有一個叫「isDirectorof」的Property，他所對應的Value就有「少年PI」與「雙子殺手」這兩個Entity。
+
+LDSD
+--
+LDSD指的是兩個Entity之間的距離，公式如下。ra與rb就是前述所說的Entity，也就是資料點；l代表Property，也就是兩點之間的關係是什麼，i則表示有多個Property，在兩個Entity之間他們可能由不同的關係所連接起來。
+<div align=center><img scr="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/ldsd_algorithm.png"></div>
