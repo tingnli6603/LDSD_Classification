@@ -26,8 +26,11 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 
 ### 直接距離
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/direct_distance_algorithm.png" width="600"></div>
+
 (前後兩者的差異在於方向性，方向是從ra到rb或是從rb到ra。)
+
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/direct_distance_sample.png" width="350"></div>
+
 
 假設我們只要看其中一個property l1兩者之間的關係，從ra到rb的分母指的是ra在l1的關係下可以找到幾個value；分子則是在這些value下，是否有一個是rb，如果有為1，沒有則為0(表示兩者之間在此property下是沒有關係的)。而從rb到ra也是如此，只是反過來搜尋。那如果有多個i，也就是把所有Property加總起來而已。
 
@@ -35,8 +38,11 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 
 ### 間接距離
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/indirect_distance_algorithm.png" width="600"></div>
+
 (間接距離我們視為兩者是沒有差異的，因此計算完一個後乘2)
+
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/indirect_distance_sample.png" width="350"></div>
+
 
 也是先假設只有1個關係l1，就是搜尋兩個Entity ra與rb在l1的關係下可以找到那些value，分母的部分以ra找到的value總數為主；分子則是看ra在l1找到的value跟rb在l1找到的value相同的有幾個，如果數量越多表示兩者關係強度越強，如果完全沒關係就為0。一樣有越多li就是加總而已。
 
