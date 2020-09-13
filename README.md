@@ -65,11 +65,12 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 我們利用簡單的方法挑選類別Entities，是將每一個類別都隨機挑出80%文章作為代表文章，將80%文本內的所有Entity作為類別Entities，剩下的20%則為測試資料。
 
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/ldsd_classification.png" width="600"></div>
-1. 單一text entity與每個business entity計算完LDSD後做加總平均表示單一text entity與business類別的語意距離。
 
-2. 所有text entity與business entities計算完後做加總平均，即代表這篇文章與這個類別的語意距離。
+1.單一text entity與每個business entity計算完LDSD後做加總平均表示單一text entity與business類別的語意距離。
 
-3. 該文章與所有類別都計算完後，就可以選擇距離最小者作為分類類別。
+2.所有text entity與business entities計算完後做加總平均，即代表這篇文章與這個類別的語意距離。
+
+3.該文章與所有類別都計算完後，就可以選擇距離最小者作為分類類別。
 
 ### Property挑選
 在不同的分類應用我們可以挑選不同的Property，而在這邊我們挑選常出現的兩個property使用，分別為dct:subject與gold:hypernym。
