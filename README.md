@@ -26,7 +26,8 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 
 ### 直接距離
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/direct_distance_algorithm.png" width="600"></div>
+(前後兩者的差異又在於方向性，方向是從ra到rb或是從rb到ra。)
 <div align=center><img src="https://github.com/tingnli6603/LDSD_Classification/blob/master/readme_img/direct_distance_sample.png" width="350"></div>
-前後兩者的差異又在於方向性，方向是從ra到rb或是從rb到ra。
 
 假設我們只要看其中一個property l1兩者之間的關係，從ra到rb的分母指的是ra在l1的關係下可以找到幾個value；分子則是在這些value下，是否有一個是rb，如果有為1，沒有則為0(表示兩者之間在此property下是沒有關係的)。而從rb到ra也是如此，只是反過來搜尋。那如果有多個i，也就是把所有Property加總起來而已。
+> 分母如此設定的意義在於在不同關係(li)下，所產生的value數量可能不一樣，那兩者之間的連結強度也不同。假設ra跟rb在l1與l2都有連結，ra在l1的value有100個，而在l2的value只有5個，那兩者在l2的連結強度會大於l1。其實概念就是每個人的朋友可能有幾百個人，但能稱為好朋友的大概就那5個，因此如果兩個人在好朋友的關係下有連結，那強度會比朋友關係還來的強，距離也會較短。
