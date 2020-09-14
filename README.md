@@ -78,7 +78,7 @@ LDSD指的是兩個Entity之間的距離，公式如下。主要拆分成前半�
 程式檔案介紹
 --
 #### get_news_entities.ipynb
-我們透過https://github.com/dbpedia-spotlight/dbpedia-spotlight可以自行架設DBpedia Spotlight服務。將所有文本放入服務後取得Entities。
+我們透過https://github.com/dbpedia-spotlight/dbpedia-spotlight 可以自行架設DBpedia Spotlight服務。將所有文本放入服務後取得Entities。
 #### get_news_entities_problem.ipynb
 DBpedia Spotlight服務問題，輸入的文本長度不能太長，所以切割區塊放入。
 #### split_news_class_test.ipynb
